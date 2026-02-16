@@ -15,8 +15,8 @@ const HeroSection = () => {
         <source src="/Setup-Background.mp4" type="video/mp4" />
       </video>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
+      {/* Overlay - subtle to let video shine through */}
+      <div className="absolute inset-0 bg-background/30" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center max-w-3xl">
