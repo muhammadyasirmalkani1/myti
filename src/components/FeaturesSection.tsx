@@ -1,5 +1,4 @@
 import { Brain, BarChart3, Shield, Zap } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
   {
@@ -26,27 +25,29 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-24 bg-secondary/30">
-      <div className="container mx-auto px-6">
+    <section id="features" className="relative py-24">
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-lg" />
+      <div className="relative z-10 container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
             Built for the Future of Finance
           </h2>
-          <p className="text-muted-foreground max-w-lg mx-auto">
+          <p className="text-white/70 max-w-lg mx-auto">
             Everything you need to navigate Web3 with confidence, powered by cutting-edge AI.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {features.map((f) => (
-            <Card key={f.title} className="border-border/50 bg-card/80 backdrop-blur-sm hover:shadow-md transition-shadow">
-              <CardContent className="pt-6">
-                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <f.icon className="h-5 w-5 text-primary" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">{f.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{f.description}</p>
-              </CardContent>
-            </Card>
+            <div
+              key={f.title}
+              className="rounded-xl border border-white/15 bg-white/10 backdrop-blur-md p-6 hover:bg-white/15 transition-all hover:shadow-lg hover:shadow-white/5"
+            >
+              <div className="h-10 w-10 rounded-lg bg-white/15 flex items-center justify-center mb-4">
+                <f.icon className="h-5 w-5 text-white" />
+              </div>
+              <h3 className="font-semibold text-white mb-2">{f.title}</h3>
+              <p className="text-sm text-white/60 leading-relaxed">{f.description}</p>
+            </div>
           ))}
         </div>
       </div>
